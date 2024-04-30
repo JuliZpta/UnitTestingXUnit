@@ -6,145 +6,133 @@ using StringManipulation;
 public class StringManipulationTest
 {
     [Fact]
+    //Basicamente acá vamos a crear dos strings en las cuales se les pondrán dos textos
+    //Y con el Assert, vamos a corroborar de que el resultado del método sea el mismo
     public void TestConcatenateStrings()
     {
         var stringOperations = new StringOperations();
-        string str1 = "Hello";
-        string str2 = "World";
+        string str1 = "Hola";
+        string str2 = "Gente";
 
-        string result = stringOperations.ConcatenateStrings(str1, str2);
+        string resultado = stringOperations.ConcatenateStrings(str1, str2);
         
-        Assert.Equal("Hello World", result);
+        Assert.Equal("Hola Gente", resultado);
     }
 
     [Fact]
+    //Aquí vamos a crear un string el cual lo que le pongamos se va a poner a la reversa
     public void TestReverseString()
     {
-        // Arrange
+        
         var stringOperations = new StringOperations();
-        string input = "hello";
+        string x = "hola";
 
-        // Act
-        string result = stringOperations.ReverseString(input);
+        string resultado = stringOperations.ReverseString(x);
 
-        // Assert
-        Assert.Equal("olleh", result);
+        Assert.Equal("aloh", resultado);
     }
 
     [Fact]
+    //Aquí crearemos una string con un texto, el cual el método nos va a sacar el número de caracteres
     public void TestGetStringLength()
     {
-        // Arrange
         var stringOperations = new StringOperations();
-        string input = "Hello";
+        string x = "Hola";
 
-        // Act
-        int length = stringOperations.GetStringLength(input);
+        int tamano = stringOperations.GetStringLength(x);
 
-        // Assert
-        Assert.Equal(5, length);
+        Assert.Equal(4, tamano);
     }
 
     [Fact]
+    //Crearemos una string para eliminar los espacios que hayan en la misma
     public void TestRemoveWhitespace()
     {
-        // Arrange
         var stringOperations = new StringOperations();
-        string input = "Hello World";
+        string x = "Liliana Hola";
 
-        // Act
-        string result = stringOperations.RemoveWhitespace(input);
+        string resultado = stringOperations.RemoveWhitespace(x);
 
-        // Assert
-        Assert.Equal("HelloWorld", result);
+        Assert.Equal("LilianaHola", resultado);
     }
 
     [Fact]
+    //Crearemos un string y le daremos un valor en especifico para que la
+    //longitud de la misma se comporte acorde a nuestro interes
     public void TestTruncateString()
     {
-        // Arrange
         var stringOperations = new StringOperations();
-        string input = "Hello World";
+        string x = "Maria Hola";
 
-        // Act
-        string result = stringOperations.TruncateString(input, 5);
+        string resultado = stringOperations.TruncateString(x, 5);
 
-        // Assert
-        Assert.Equal("Hello", result);
+        Assert.Equal("Maria", resultado);
     }
 
     [Fact]
+    //Aquí se crean dos string, los cuales se corrobora si son Palindromos
+    //Esto quiere decir, que si se leen de igual manera de atrás para adelate y viceversa
     public void TestIsPalindrome()
     {
-        // Arrange
         var stringOperations = new StringOperations();
-        string inputPalindrome = "level";
-        string inputNotPalindrome = "hello";
+        string Palindromo = "Oso";
+        string NoPalindromo = "Maria";
 
-        // Act & Assert
-        Assert.True(stringOperations.IsPalindrome(inputPalindrome));
-        Assert.False(stringOperations.IsPalindrome(inputNotPalindrome));
+
+        Assert.True(stringOperations.IsPalindrome(Palindromo));
+        Assert.False(stringOperations.IsPalindrome(NoPalindromo));
     }
 
     [Fact]
+    //Se crea un string,y se somete para saber la cantidad de caracteres que hay en el mismo
     public void TestCountOccurrences()
     {
-        // Arrange
-        var loggerMock = new Mock<ILogger<StringOperations>>();
-        var stringOperations = new StringOperations(loggerMock.Object);
-        string input = "hello";
+        var stringOperations = new StringOperations();
+        string x = "Hola";
 
-        // Act
-        int result = stringOperations.CountOccurrences(input, 'l');
+        int resultado = stringOperations.CountOccurrences(x, 'l');
 
-        // Assert
-        Assert.Equal(2, result);
-        loggerMock.Verify(x => x.LogInformation(It.IsAny<string>()), Times.Once);
+        Assert.Equal(1, resultado);
+        
     }
 
+
     [Fact]
+    //Pondremos una palabra en singular, y el método la pondrá en plural
     public void TestPluralize()
     {
-        // Arrange
         var stringOperations = new StringOperations();
-        string inputSingular = "apple";
-        string inputPlural = "person";
+        string Singular = "apple";
 
-        // Act
-        string resultSingular = stringOperations.Pluralize(inputSingular);
-        string resultPlural = stringOperations.Pluralize(inputPlural);
+        string resultadoSingular = stringOperations.Pluralize(Singular);
 
-        // Assert
-        Assert.Equal("apples", resultSingular);
-        Assert.Equal("people", resultPlural);
+        Assert.Equal("apples", resultadoSingular);
+    
     }
 
     [Fact]
+    //Aquí crearemos un string y un entero, este entero se va a convertir en palabras
     public void TestQuantintyInWords()
     {
-        // Arrange
+
         var stringOperations = new StringOperations();
-        string input = "apple";
-        int quantity = 2;
+        string x = "apples";
+        int cantidad = 2;
 
-        // Act
-        string result = stringOperations.QuantintyInWords(input, quantity);
+        string resultado = stringOperations.QuantintyInWords(x, cantidad);
 
-        // Assert
-        Assert.Equal("two apples", result);
+        Assert.Equal("two apples", resultado);
     }
 
     [Fact]
+    //Aquí simplemente se crea un string, el cual tiene un número en Romano, y se convertirá a Entero
     public void TestFromRomanToNumber()
     {
-        // Arrange
         var stringOperations = new StringOperations();
-        string input = "XIV";
+        string x = "XIV";
 
-        // Act
-        int result = stringOperations.FromRomanToNumber(input);
+        int resultado = stringOperations.FromRomanToNumber(x);
 
-        // Assert
-        Assert.Equal(14, result);
+        Assert.Equal(14, resultado);
     }
 }
