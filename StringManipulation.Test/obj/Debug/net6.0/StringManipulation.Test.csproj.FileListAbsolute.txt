@@ -1,0 +1,5 @@
+C:\Users\ASUS\Documents\GitHub\UnitTestingXUnit\StringManipulation.Test\obj\Debug\net6.0\StringManipulation.Test.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\GitHub\UnitTestingXUnit\StringManipulation.Test\obj\Debug\net6.0\StringManipulation.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Documents\GitHub\UnitTestingXUnit\StringManipulation.Test\obj\Debug\net6.0\StringManipulation.Test.AssemblyInfoInputs.cache
+C:\Users\ASUS\Documents\GitHub\UnitTestingXUnit\StringManipulation.Test\obj\Debug\net6.0\StringManipulation.Test.AssemblyInfo.cs
+C:\Users\ASUS\Documents\GitHub\UnitTestingXUnit\StringManipulation.Test\obj\Debug\net6.0\StringManipulation.Test.csproj.CoreCompileInputs.cache
